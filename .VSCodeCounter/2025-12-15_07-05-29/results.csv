@@ -1,0 +1,11 @@
+"filename", "language", "Python", "pip requirements", "Docker", "comment", "blank", "total"
+"c:\Users\remne\Documents\FirstFullStak\backend\Dockerfile", "Docker", 0, 0, 12, 0, 5, 17
+"c:\Users\remne\Documents\FirstFullStak\backend\app\__init__.py", "Python", 0, 0, 0, 0, 1, 1
+"c:\Users\remne\Documents\FirstFullStak\backend\app\auth.py", "Python", 20, 0, 0, 0, 4, 24
+"c:\Users\remne\Documents\FirstFullStak\backend\app\crud.py", "Python", 126, 0, 0, 25, 33, 184
+"c:\Users\remne\Documents\FirstFullStak\backend\app\database.py", "Python", 26, 0, 0, 0, 9, 35
+"c:\Users\remne\Documents\FirstFullStak\backend\app\main.py", "Python", 292, 0, 0, 18, 52, 362
+"c:\Users\remne\Documents\FirstFullStak\backend\app\models.py", "Python", 39, 0, 0, 0, 6, 45
+"c:\Users\remne\Documents\FirstFullStak\backend\app\schemas.py", "Python", 27, 0, 0, 0, 6, 33
+"c:\Users\remne\Documents\FirstFullStak\backend\requirements.txt", "pip requirements", 0, 9, 0, 0, 1, 10
+"Total", "-", 530, 9, 12, 43, 117, 711

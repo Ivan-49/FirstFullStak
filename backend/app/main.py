@@ -330,8 +330,6 @@ async def download_file(
         headers={"Content-Disposition": 'attachment; filename="file.png"'}
     )
 
-
-
 @app.delete("/files/{file_id}")
 async def delete_file_endpoint(
     file_id: int,

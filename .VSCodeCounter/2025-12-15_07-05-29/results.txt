@@ -1,0 +1,37 @@
+Date : 2025-12-15 07:05:29
+Directory : c:\Users\remne\Documents\FirstFullStak\backend
+Total : 9 files,  551 codes, 43 comments, 117 blanks, all 711 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| Python           |          7 |        530 |         43 |        111 |        684 |
+| Docker           |          1 |         12 |          0 |          5 |         17 |
+| pip requirements |          1 |          9 |          0 |          1 |         10 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                               |          9 |        551 |         43 |        117 |        711 |
+| . (Files)                                                       |          2 |         21 |          0 |          6 |         27 |
+| app                                                             |          7 |        530 |         43 |        111 |        684 |
++-----------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                        | language         | code       | comment    | blank      | total      |
++-----------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\remne\Documents\FirstFullStak\backend\Dockerfile       | Docker           |         12 |          0 |          5 |         17 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\__init__.py  | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\auth.py      | Python           |         20 |          0 |          4 |         24 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\crud.py      | Python           |        126 |         25 |         33 |        184 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\database.py  | Python           |         26 |          0 |          9 |         35 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\main.py      | Python           |        292 |         18 |         52 |        362 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\models.py    | Python           |         39 |          0 |          6 |         45 |
+| c:\Users\remne\Documents\FirstFullStak\backend\app\schemas.py   | Python           |         27 |          0 |          6 |         33 |
+| c:\Users\remne\Documents\FirstFullStak\backend\requirements.txt | pip requirements |          9 |          0 |          1 |         10 |
+| Total                                                           |                  |        551 |         43 |        117 |        711 |
++-----------------------------------------------------------------+------------------+------------+------------+------------+------------+
