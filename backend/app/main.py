@@ -64,7 +64,7 @@ async def register(
     db: AsyncSession = Depends(get_db)
 ):
     try:
-        user = await crud.create_user(db, username, password, name)
+        user = await crud.create_user(db=db, username=username, name=name, password=password)
         return {"message": "Пользователь создан", "user_id": user.id}
     except Exception as e:
         raise HTTPException(400, f"Ошибка регистрации: {str(e)}")
@@ -85,27 +85,6 @@ async def login(
     except Exception:
         raise HTTPException(401, "Неверные данные")
 
-@app.post("/upload")
-async def upload_file(
-    file: UploadFile = File(...),
-    lesson_id: int = Form(...),
-    credentials: HTTPAuthorizationCredentials = Depends(security),
-    db: AsyncSession = Depends(get_db)
-):
-    try:
-        user_id = auth.verify_token(credentials.credentials)
-        db_file = await crud.create_file(db, user_id, lesson_id, file)
-        return {
-            "id": db_file.id,
-            "filename": db_file.filename,
-            "filepath": db_file.filepath,
-            "size": db_file.size_bytes,
-            "message": "Файл загружен!"
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(500, f"Ошибка загрузки: {str(e)}")
 
 @app.get("/schedule/{date_str}")
 async def get_schedule(
@@ -132,15 +111,15 @@ async def get_schedule(
     
     return {
         "date": target_date.isoformat(),
-        "notes": getattr(schedule_date, 'notes', '') or "",
+        "notes": schedule_date.notes or "",
         "lessons": [
             {
                 "id": l.id,
                 "lesson_number": l.lesson_number,
-                "subject": getattr(l, 'subject', '') or "",
-                "teacher": getattr(l, 'teacher', '') or "",
-                "room": getattr(l, 'room', '') or "",
-                "files": []
+                "subject": l.subject or "",
+                "teacher": l.teacher or "",
+                "room": l.room or "",
+                "files": [f.id for f in await crud.get_lesson_files(db, l.id)]
             } for l in lessons
         ]
     }
@@ -359,3 +338,52 @@ async def delete_lesson_endpoint(
         return result
     except ValueError:
         raise HTTPException(404, "Пара не найдена")
+
+
+@app.post("/create-lesson")
+async def create_lesson(
+    date_id:str = Form(None),
+    lesson_number:str = Form(None),
+    subject: str = Form(None),
+    teacher: str = Form(None),
+    room: str = Form(None),
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)):
+
+    """добавить новую пару"""
+    auth.verify_token(credentials.credentials)
+    
+    lesson = await crud.create_lesson(db, date_id, lesson_number, subject, teacher, room)
+    return {
+        "id": lesson.id,
+        "lesson_number": lesson.lesson_number,
+        "subject": lesson.subject,
+        "teacher": lesson.teacher,
+        "room": lesson.room
+    }
+
+
+
+@app.get("/date/{date_str}/id")
+async def get_date_id(
+    date_str: str,
+    db: AsyncSession = Depends(get_db)
+):
+    """Получить/создать ID даты по строке даты"""
+    target_date = parse_date(date_str)
+    
+    # Твой код из get_schedule
+    stmt = select(models.ScheduleDate).where(models.ScheduleDate.date == target_date)
+    result = await db.execute(stmt)
+    schedule_date = result.scalar_one_or_none()
+    
+    if not schedule_date:
+        schedule_date = models.ScheduleDate(date=target_date)
+        db.add(schedule_date)
+        await db.commit()
+        await db.refresh(schedule_date)
+    
+    return {
+        "date": target_date.isoformat(),
+        "date_id": schedule_date.id
+    }
