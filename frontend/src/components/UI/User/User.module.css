@@ -1,0 +1,10 @@
+.UserCard{
+    
+    border: 3px solid teal;
+    background-color: rgba(0, 128, 128, 0.207);
+    
+}
+
+li{
+    list-style: none;
+}
