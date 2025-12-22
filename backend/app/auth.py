@@ -2,7 +2,7 @@ import jwt
 from datetime import datetime, timedelta
 from fastapi import HTTPException, status
 
-SECRET_KEY = "your-super-secret-key-change-in-production"
+SECRET_KEY = "secret"
 ALGORITHM = "HS256"
 
 def create_token(user_id: int) -> str:

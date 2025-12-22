@@ -1,58 +1,53 @@
-import './App.css';
-import axios from 'axios';
-import { useState } from 'react';
-import UserCard from './components/UI/User/User';
-import FileInput from './components/UI/FileInput/FileInput';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { authAPI } from './api';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './components/Login';
+import Schedule from './components/Schedule';
+import Navbar from './components/Navbar';
 
-function App() {
-    const [doc, setDoc] = useState('');
-    const [user, setUser] = useState(
-        {
-            user_id: 0,
-            name: '',
-            lastname:''
-        })
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
 
-    const getDocs = async () => {
-        const result = await axios.get("/api/get_user", {
-            params: { user_id: user.user_id}
-        });
-        setUser({...result.data, user_id: user.user_id})
-        console.log(result)
-    };
-
-    return (
-        <div className="App">
-            <button onClick={getDocs}>Получить данные</button>
-            <pre>{doc}</pre>
-
-            <input 
-            type='number' 
-            value={user.user_id}
-            onChange={e=> setUser({...user, user_id: parseInt(e.target.value)})}
-            placeholder='id пользователя'
-            >
-            </input>
-
-            <UserCard 
-            name = {user.name}
-            lastname={user.lastName}
-            id = {user.user_id}
-            >
-
-            </UserCard>
-
-            <div className='user'>
-                
-                id: {user.user_id}
-                Имя: {user.name}
-                Фамилия: {user.lastname}
-            </div>
-
-            <FileInput></FileInput>
-
-        </div>
-    );
-}
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/schedule"
+            element={
+              <ProtectedRoute>
+                <>
+                  <Navbar />
+                  <Schedule />
+                </>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <Navigate to={authAPI.isAuthenticated() ? "/schedule" : "/login"} />
+            }
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
+};
 
 export default App;

@@ -1,0 +1,21 @@
+"filename", "language", "Docker", "YAML", "Properties", "pip requirements", "Python", "JSON", "Ignore", "Markdown", "PostCSS", "JavaScript", "HTML", "JavaScript JSX", "comment", "blank", "total"
+"c:\Users\remne\Documents\FirstFullStak\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\remne\Documents\FirstFullStak\backend\Dockerfile", "Docker", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 15
+"c:\Users\remne\Documents\FirstFullStak\backend\app\main.py", "Python", 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 10, 40
+"c:\Users\remne\Documents\FirstFullStak\backend\requirements.txt", "pip requirements", 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"c:\Users\remne\Documents\FirstFullStak\docker-compose.yaml", "YAML", 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 62
+"c:\Users\remne\Documents\FirstFullStak\frontend\.dockerignore", "Ignore", 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 15
+"c:\Users\remne\Documents\FirstFullStak\frontend\Dockerfile", "Docker", 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\remne\Documents\FirstFullStak\frontend\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 0, 33, 71
+"c:\Users\remne\Documents\FirstFullStak\frontend\package-lock.json", "JSON", 0, 0, 0, 0, 0, 17459, 0, 0, 0, 0, 0, 0, 0, 1, 17460
+"c:\Users\remne\Documents\FirstFullStak\frontend\package.json", "JSON", 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 1, 41
+"c:\Users\remne\Documents\FirstFullStak\frontend\public\index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 24, 1, 44
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\App.css", "PostCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\App.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 0, 12, 59
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\components\UI\FileInput\FileInput.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 6, 36
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\components\UI\FileInput\FileInput.module.css", "PostCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\components\UI\User\User.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 5, 19
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\components\UI\User\User.module.css", "PostCSS", 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 4, 11
+"c:\Users\remne\Documents\FirstFullStak\frontend\src\index.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 2, 10
+"c:\Users\remne\Documents\FirstFullStak\nginx\nginx.conf", "Properties", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 18
+"Total", "-", 17, 55, 13, 9, 30, 17499, 15, 39, 7, 55, 19, 44, 24, 99, 17925
